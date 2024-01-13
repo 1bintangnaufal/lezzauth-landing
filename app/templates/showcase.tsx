@@ -37,7 +37,6 @@ export default function Showcase() {
               onChange={handleTabChange}
               name="showcaseTab"
               className="peer hidden"
-              defaultChecked
             />
             <label
               htmlFor="featureA"
@@ -119,9 +118,7 @@ export default function Showcase() {
         <Image
           src={A_sectionSupport}
           alt="Common Graphics"
-          className="absolute"
-          objectFit="cover"
-          objectPosition="top left"
+          className="absolute object-cover object-left-top"
         />
         <PrimaryButton className="absolute left-0 bottom-0">
           View Code
@@ -129,7 +126,7 @@ export default function Showcase() {
         {activeTab === 1 && (
           <Image
             src={A_signIn}
-            alt="Sign In Feature"
+            alt="Feature: Sign In"
             width={320}
             height={320}
             className="absolute"
@@ -138,7 +135,7 @@ export default function Showcase() {
         {activeTab === 2 && (
           <Image
             src={A_signUp}
-            alt="Sign Up Feature"
+            alt="Feature: Sign Up"
             width={320}
             height={320}
             className="absolute"
@@ -146,19 +143,19 @@ export default function Showcase() {
         )}
         {activeTab === 3 && (
           <Image
-            src=""
-            alt="User Button Feature"
-            // width={280}
-            // height={280}
+            src={A_signIn}
+            alt="Feature: User Button"
+            width={320}
+            height={320}
             className="absolute"
           />
         )}
         {activeTab === 4 && (
           <Image
-            src=""
-            alt="User Profile Feature"
-            // width={280}
-            // height={280}
+            src={A_signUp}
+            alt="Feature: User Profile"
+            width={320}
+            height={320}
             className="absolute"
           />
         )}
