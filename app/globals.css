@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Monaspace-Neon';
+  src: url(/public/MonaspaceNeonVarVF.woff2) format('woff2');
+}
+
 :root {
   --foreground-rgb: 255, 255, 255;
   --background-start-rgb: 31, 32, 37;

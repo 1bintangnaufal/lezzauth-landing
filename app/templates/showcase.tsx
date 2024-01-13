@@ -1,12 +1,23 @@
+import React, { useState } from "react";
 import { DecoratedH3, DefaultH3 } from "./typefaces";
+import Image from "next/image";
+import { PrimaryButton } from "./buttons";
+import A_sectionSupport from "@/public/feat-section-support.png";
+import A_signIn from "@/public/feat-sign-in.png"
+import A_signUp from "@/public/feat-sign-up.png"
 
 export default function Showcase() {
   const signInText = "<SignIn/>";
   const signUpText = "<SignUp/>";
   const userButtonText = "<UserButton/>";
   const userProfileText = "<UserProfile/>";
+  type Tabs = 1 | 2 | 3 | 4;
+  const [activeTab, setActiveTab] = useState<Tabs>(1);
+  const handleTabChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setActiveTab(Number(event.target.value) as Tabs);
+  };
   return (
-    <div className="grid grid-cols-2 gap-10">
+    <div className="grid grid-cols-2 gap-24">
       <div className="flex flex-col gap-6">
         <div>
           <DecoratedH3>Auth & User Management</DecoratedH3>
@@ -16,12 +27,14 @@ export default function Showcase() {
             <DefaultH3>of Code</DefaultH3>
           </div>
         </div>
-        <div className="flex flex-col gap-4 place-items-start">
+        <div className="flex flex-col gap-2 place-items-start">
           <div className="relative group">
             <input
               type="radio"
               id="featureA"
               value={1}
+              checked={activeTab === 1}
+              onChange={handleTabChange}
               name="showcaseTab"
               className="peer hidden"
               defaultChecked
@@ -32,7 +45,7 @@ export default function Showcase() {
             />
             <label
               htmlFor="featureA"
-              className="block cursor-pointer select-none bg-lezzaccent w-96 py-2 ps-6 text-2xl rounded-md group-hover:bg-lezzborder transition-all ease-out duration-300 delay-150 sepia-[.5] peer-checked:filter-none"
+              className="block cursor-pointer select-none font-monaspace bg-lezzaccent w-96 py-2 ps-6 text-2xl rounded-md group-hover:bg-lezzborder transition-all ease-out duration-300 delay-150 sepia-[.5] peer-checked:filter-none"
             >
               {signInText}
             </label>
@@ -42,6 +55,8 @@ export default function Showcase() {
               type="radio"
               id="featureB"
               value={2}
+              checked={activeTab === 2}
+              onChange={handleTabChange}
               name="showcaseTab"
               className="peer hidden"
             />
@@ -51,7 +66,7 @@ export default function Showcase() {
             />
             <label
               htmlFor="featureB"
-              className="block cursor-pointer select-none bg-lezzaccent w-96 py-2 ps-6 text-2xl rounded-md group-hover:bg-lezzborder transition-all ease-out duration-300 delay-150 sepia-[.5] peer-checked:filter-none"
+              className="block cursor-pointer select-none font-monaspace bg-lezzaccent w-96 py-2 ps-6 text-2xl rounded-md group-hover:bg-lezzborder transition-all ease-out duration-300 delay-150 sepia-[.5] peer-checked:filter-none"
             >
               {signUpText}
             </label>
@@ -61,6 +76,8 @@ export default function Showcase() {
               type="radio"
               id="featureC"
               value={3}
+              checked={activeTab === 3}
+              onChange={handleTabChange}
               name="showcaseTab"
               className="peer hidden"
             />
@@ -70,7 +87,7 @@ export default function Showcase() {
             />
             <label
               htmlFor="featureC"
-              className="block cursor-pointer select-none bg-lezzaccent w-96 py-2 ps-6 text-2xl rounded-md group-hover:bg-lezzborder transition-all ease-out duration-300 delay-150 sepia-[.5] peer-checked:filter-none"
+              className="block cursor-pointer select-none font-monaspace bg-lezzaccent w-96 py-2 ps-6 text-2xl rounded-md group-hover:bg-lezzborder transition-all ease-out duration-300 delay-150 sepia-[.5] peer-checked:filter-none"
             >
               {userButtonText}
             </label>
@@ -80,6 +97,8 @@ export default function Showcase() {
               type="radio"
               id="featureD"
               value={4}
+              checked={activeTab === 4}
+              onChange={handleTabChange}
               name="showcaseTab"
               className="peer hidden"
             />
@@ -89,15 +108,60 @@ export default function Showcase() {
             />
             <label
               htmlFor="featureD"
-              className="block cursor-pointer select-none bg-lezzaccent w-96 py-2 ps-6 text-2xl rounded-md group-hover:bg-lezzborder transition-all ease-out duration-300 delay-150 sepia-[.5] peer-checked:filter-none"
+              className="block cursor-pointer select-none font-monaspace bg-lezzaccent w-96 py-2 ps-6 text-2xl rounded-md group-hover:bg-lezzborder transition-all ease-out duration-300 delay-150 sepia-[.5] peer-checked:filter-none"
             >
               {userProfileText}
             </label>
           </div>
         </div>
       </div>
-      <div className="flex place-self-center">
-        <p>affh iyyh?</p>
+      <div className="flex place-items-center place-content-center relative">
+        <Image
+          src={A_sectionSupport}
+          alt="Common Graphics"
+          className="absolute"
+          objectFit="cover"
+          objectPosition="top left"
+        />
+        <PrimaryButton className="absolute left-0 bottom-0">
+          View Code
+        </PrimaryButton>
+        {activeTab === 1 && (
+          <Image
+            src={A_signIn}
+            alt="Sign In Feature"
+            width={320}
+            height={320}
+            className="absolute"
+          />
+        )}
+        {activeTab === 2 && (
+          <Image
+            src={A_signUp}
+            alt="Sign Up Feature"
+            width={320}
+            height={320}
+            className="absolute"
+          />
+        )}
+        {activeTab === 3 && (
+          <Image
+            src=""
+            alt="User Button Feature"
+            // width={280}
+            // height={280}
+            className="absolute"
+          />
+        )}
+        {activeTab === 4 && (
+          <Image
+            src=""
+            alt="User Profile Feature"
+            // width={280}
+            // height={280}
+            className="absolute"
+          />
+        )}
       </div>
     </div>
   );

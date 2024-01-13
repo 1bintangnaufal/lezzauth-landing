@@ -4,6 +4,7 @@ import { CtaButton, PlayButton } from "./templates/buttons";
 import { DecoratedH1, DefaultH2 } from "./templates/typefaces";
 import React from "react";
 import Showcase from "./templates/showcase";
+import A_placeholder from "@/public/video-placeholder.png";
 
 export default function Home() {
   const [isPlayed, setIsPlayed] = React.useState(false);
@@ -26,15 +27,13 @@ export default function Home() {
         </div>
         <div className="flex place-items-center place-content-center">
           <Image
-            src="/video-placeholder.png"
+            src={A_placeholder}
             alt="LezzAuth Showcase/Demo"
-            width={1280}
-            height={1280}
             className="relative"
           />
-          <PlayButton className="absolute bottom-auto top-auto left-auto right-auto" />
+          <PlayButton className="absolute" />
         </div>
-        <div>
+        <div className="flex place-items-center place-content-center">
           <Showcase />
         </div>
       </div>

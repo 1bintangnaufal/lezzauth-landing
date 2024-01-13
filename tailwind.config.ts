@@ -19,6 +19,10 @@ const config: Config = {
         'lezzchia': '#F923E4',
         'ghosthover': 'rgba(78, 90, 133, 0.6)',
         'lezzaccent': '#181A21',
+        'lezzbg': 'rgb(31, 32, 37)',
+      },
+      fontFamily: {
+        'monaspace': ['"Monaspace-Neon"', 'monospace']
       }
     },
   },
