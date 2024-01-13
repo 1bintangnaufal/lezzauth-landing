@@ -1,27 +1,12 @@
 "use client";
 import Image from "next/image";
-import { CtaButton } from "./template/buttons";
-import { DecoratedH1, DefaultH2 } from "./template/typefaces";
+import { CtaButton, PlayButton } from "./templates/buttons";
+import { DecoratedH1, DefaultH2 } from "./templates/typefaces";
 import React from "react";
+import Showcase from "./templates/showcase";
 
 export default function Home() {
   const [isPlayed, setIsPlayed] = React.useState(false);
-  const featureShowcase: string = "signIn";
-  switch (featureShowcase) {
-    case "signIn":
-      console.log("signIn"); //change to assets
-      break;
-    case "signUp":
-      console.log("signUp");
-      break;
-    case "userButton":
-      console.log("userButton");
-      break;
-    case "userProfile":
-      console.log("userProfile");
-      break;
-  }
-
   return (
     <main className="min-h-screen px-24 py-16">
       <div className="grid grid-cols-1 gap-32">
@@ -39,33 +24,18 @@ export default function Home() {
           </p>
           <CtaButton>Book a Demo</CtaButton>
         </div>
-        <div className="flex place-content-center">
+        <div className="flex place-items-center place-content-center">
           <Image
             src="/video-placeholder.png"
             alt="LezzAuth Showcase/Demo"
             width={1280}
             height={1280}
+            className="relative"
           />
+          <PlayButton className="absolute bottom-auto top-auto left-auto right-auto" />
         </div>
-        <div className="grid grid-cols-2 gap-10">
-          <div className="flex flex-col gap-4">
-            <div>
-              <p>Auth & User Management</p>
-              <p>with just</p>
-              <p>
-                One Line <span>of Code</span>
-              </p>
-            </div>
-            <div className="flex flex-col gap-2 place-items-start">
-              <button>SignIn</button>
-              <button>SignUp</button>
-              <button>UserButton</button>
-              <button>UserProfile</button>
-            </div>
-          </div>
-          <div className="flex place-self-center">
-            <p>affh iyyh?</p>
-          </div>
+        <div>
+          <Showcase />
         </div>
       </div>
     </main>

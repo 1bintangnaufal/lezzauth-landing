@@ -46,7 +46,7 @@ export function DecoratedH3({
   return (
     <>
       <h3
-        className={`text-3xl font-bold bg-gradient-to-r from-lezzchia to-lezzindigo inline-block text-transparent bg-clip-text py-2 ${
+        className={`text-4xl font-bold bg-gradient-to-r from-lezzchia to-lezzindigo inline-block text-transparent bg-clip-text py-2 ${
           className || ""
         }`}
       >
@@ -94,7 +94,7 @@ export function DefaultH3({
 }) {
   return (
     <>
-      <h1 className={`text-3xl font-bold ${className || ""}`}>
+      <h1 className={`text-4xl font-bold ${className || ""}`}>
         {children}
       </h1>
     </>
