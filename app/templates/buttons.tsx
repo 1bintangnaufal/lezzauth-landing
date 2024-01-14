@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Ic_Play from "@/public/ic-play.svg";
+import Ic_X from "@/public/ic-x.svg";
 
 export function PrimaryButton({
   children,
@@ -19,10 +21,33 @@ export function PrimaryButton({
     </>
   );
 }
-export function GhostButton({ children }: { children: React.ReactNode }) {
+export function XButton({ className }: { className?: string }) {
   return (
     <>
-      <button className="w-fit h-8 text-xs rounded-full px-4 py-2 hover:bg-ghosthover transition-all ease-out duration-300 delay-150">
+      <button
+        className={`aspect-square p-1 text-xs bg-lezzindigo rounded-full size-6 hover:bg-lezzchia transition-all ease-out duration-300 delay-150 ${
+          className || ""
+        }`}
+      >
+        <Image src={Ic_X} alt="Close" />
+      </button>
+    </>
+  );
+}
+export function GhostButton({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <>
+      <button
+        className={`w-fit h-8 text-xs rounded-full px-4 py-2 hover:bg-ghosthover transition-all ease-out duration-300 delay-150 ${
+          className || ""
+        }`}
+      >
         {children}
       </button>
     </>
@@ -46,7 +71,7 @@ export function PlayButton({ className }: { className?: string }) {
           className || ""
         }`}
       >
-        <Image src="/ic-play.svg" alt="Playback" width={40} height={40} />
+        <Image src={Ic_Play} alt="Playback" width={40} height={40} />
       </button>
     </>
   );
