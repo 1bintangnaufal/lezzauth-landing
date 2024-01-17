@@ -6,7 +6,7 @@ import {
   CustomIconButton,
   XButton,
 } from "./buttons";
-import brand from "@/public/logo.svg";
+import brand from "@/public/lezzform-logo.svg";
 import { RiFingerprintFill } from "react-icons/ri";
 import React from "react";
 
@@ -15,7 +15,7 @@ export default function Header() {
   const isOpen = () => setOpen(!open);
   React.useEffect(() => {
     const body = document.body;
-    if (open) {
+    if (open === true) {
       body.style.overflow = "hidden";
     } else {
       body.style.overflow = "auto";
@@ -48,7 +48,7 @@ export default function Header() {
         </div>
       </div>
       {open && (
-        <div className="py-10 flex flex-col gap-10 place-items-center w-screen h-screen fixed top-0 left-0 z-[100] bg-lezzbg opacity-95 transition-all delay-150 duration-300 ease-out">
+        <div className="py-10 flex flex-col gap-10 place-items-center w-screen h-screen fixed top-0 z-[100] bg-lezzbg opacity-95 animate-in slide-in-from-right-full">
           <div className="flex justify-between place-items-center w-full px-6">
             <Image
               src={brand}

@@ -4,10 +4,10 @@ import { CtaButton, PlayButton, XButton } from "./templates/buttons";
 import { DecoratedH1, DefaultH2, DefaultH3 } from "./templates/typefaces";
 import React from "react";
 import Showcase from "./templates/showcase";
-import A_placeholder from "@/public/video-placeholder.png";
+import A_placeholder from "@/public/lezzform-video-placeholder.png";
 import B_react from "@/public/react-logo.svg";
 import B_next from "@/public/next-logo.svg";
-import B_native from "@/public/react-native-logo.png";
+import B_vue from "@/public/vue-logo.svg";
 
 export default function Home() {
   const [play, setPlay] = React.useState(false);
@@ -31,14 +31,14 @@ export default function Home() {
       <div className="grid grid-cols-1 gap-32">
         <div className="flex flex-col gap-7 place-items-center">
           <DecoratedH1 className="text-center">
-            Not just authentication.
+            Not just form builder.
           </DecoratedH1>
           <DefaultH2 className="text-center sm:max-w-6xl">
-            Build Complete User Management natively for React and React Native.
+            Build natively for React and React Native.
           </DefaultH2>
           <p className="text-center text-lg sm:max-w-2xl">
-            LezzAuth is not just a &quot;sign-in box&quot;. Build your auth and
-            user management, that generate natively into React, NextJs, an React
+            LezzForm is not just a &quot;form builder&quot;. Build your form by
+            drag and drop, then generate it natively into React, NextJs, an React
             Native!
           </p>
           <CtaButton>Book a Demo</CtaButton>
@@ -100,7 +100,7 @@ export default function Home() {
                 className="size-16 sm:size-24"
               />
               <Image
-                src={B_native}
+                src={B_vue}
                 alt="Brand: React Native"
                 width={75}
                 height={75}

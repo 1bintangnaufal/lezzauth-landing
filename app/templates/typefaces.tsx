@@ -8,7 +8,7 @@ export function DecoratedH1({
   return (
     <>
       <h1
-        className={`text-4xl sm:text-7xl font-bold sm:font-extrabold bg-gradient-to-r from-lezzchia to-lezzindigo text-transparent bg-clip-text py-2 ${
+        className={`text-4xl sm:text-7xl font-bold sm:font-extrabold bg-gradient-to-r from-lezzlidigo to-lezzindigo text-transparent bg-clip-text py-2 ${
           className || ""
         }`}
       >
@@ -27,7 +27,7 @@ export function DecoratedH2({
   return (
     <>
       <h2
-        className={`text-3xl sm:text-5xl font-bold sm:font-extrabold bg-gradient-to-r from-lezzchia to-lezzindigo text-transparent bg-clip-text py-2 ${
+        className={`text-3xl sm:text-5xl font-bold sm:font-extrabold bg-gradient-to-r from-lezzlidigo to-lezzindigo text-transparent bg-clip-text py-2 ${
           className || ""
         }`}
       >
@@ -46,7 +46,7 @@ export function DecoratedH3({
   return (
     <>
       <h3
-        className={`text-2xl sm:text-4xl font-semibold sm:font-bold bg-gradient-to-r from-lezzchia to-lezzindigo text-transparent bg-clip-text py-2 ${
+        className={`text-2xl sm:text-4xl font-semibold sm:font-bold bg-gradient-to-r from-lezzlidigo to-lezzindigo text-transparent bg-clip-text py-2 ${
           className || ""
         }`}
       >

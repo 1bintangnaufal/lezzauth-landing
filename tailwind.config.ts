@@ -20,12 +20,16 @@ const config: Config = {
         'ghosthover': 'rgba(78, 90, 133, 0.6)',
         'lezzaccent': '#181A21',
         'lezzbg': 'rgb(31, 32, 37)',
+        'lezztangerine': '#E76303',
+        'lezzlidigo': '#EE9AE5',
       },
       fontFamily: {
         'monaspace': ['"Monaspace-Neon"', 'monospace']
       }
     },
   },
-  plugins: [],
+  plugins: [
+    require("tailwindcss-animate")
+  ],
 }
 export default config
