@@ -8,7 +8,7 @@ export function DecoratedH1({
   return (
     <>
       <h1
-        className={`text-7xl font-extrabold bg-gradient-to-r from-lezzchia to-lezzindigo inline-block text-transparent bg-clip-text py-2 ${
+        className={`text-4xl sm:text-7xl font-bold sm:font-extrabold bg-gradient-to-r from-lezzchia to-lezzindigo text-transparent bg-clip-text py-2 ${
           className || ""
         }`}
       >
@@ -27,7 +27,7 @@ export function DecoratedH2({
   return (
     <>
       <h2
-        className={`text-5xl font-extrabold bg-gradient-to-r from-lezzchia to-lezzindigo inline-block text-transparent bg-clip-text py-2 ${
+        className={`text-3xl sm:text-5xl font-bold sm:font-extrabold bg-gradient-to-r from-lezzchia to-lezzindigo text-transparent bg-clip-text py-2 ${
           className || ""
         }`}
       >
@@ -46,7 +46,7 @@ export function DecoratedH3({
   return (
     <>
       <h3
-        className={`text-4xl font-bold bg-gradient-to-r from-lezzchia to-lezzindigo inline-block text-transparent bg-clip-text py-2 ${
+        className={`text-2xl sm:text-4xl font-semibold sm:font-bold bg-gradient-to-r from-lezzchia to-lezzindigo text-transparent bg-clip-text py-2 ${
           className || ""
         }`}
       >
@@ -64,7 +64,7 @@ export function DefaultH1({
 }) {
   return (
     <>
-      <h1 className={`text-7xl font-extrabold ${className || ""}`}>
+      <h1 className={`text-4xl sm:text-7xl font-bold sm:font-extrabold ${className || ""}`}>
         {children}
       </h1>
     </>
@@ -79,7 +79,7 @@ export function DefaultH2({
 }) {
   return (
     <>
-      <h1 className={`text-5xl font-extrabold ${className || ""}`}>
+      <h1 className={`text-3xl sm:text-5xl font-bold sm:font-extrabold ${className || ""}`}>
         {children}
       </h1>
     </>
@@ -94,7 +94,7 @@ export function DefaultH3({
 }) {
   return (
     <>
-      <h1 className={`text-4xl font-bold ${className || ""}`}>
+      <h1 className={`text-2xl sm:text-4xl font-semibold sm:font-bold ${className || ""}`}>
         {children}
       </h1>
     </>

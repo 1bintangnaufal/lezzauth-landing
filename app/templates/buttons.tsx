@@ -53,6 +53,25 @@ export function GhostButton({
     </>
   );
 }
+export function CustomIconButton({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <>
+      <button
+        className={`w-fit h-8 text-2xl rounded-full px-2 hover:bg-ghosthover transition-all ease-out duration-300 delay-150 ${
+          className || ""
+        }`}
+      >
+        {children}
+      </button>
+    </>
+  );
+}
 export function CtaButton({ children }: { children: React.ReactNode }) {
   return (
     <>

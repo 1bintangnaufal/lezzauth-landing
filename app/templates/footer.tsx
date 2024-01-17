@@ -3,7 +3,7 @@ import { GhostButton } from "./buttons";
 export default function Footer() {
   const currentYear = new Date().getFullYear();
   return (
-    <div className="bg-lezzaccent flex justify-between place-items-center px-16 py-4">
+    <div className="bg-lezzaccent flex flex-col-reverse sm:flex-row gap-3 sm:gap-0 sm:justify-between place-items-center px-16 py-4">
       <div>
         <text className="leading-[0px] text-sm">
           Copyright &copy;{currentYear} lezzauth.com

@@ -3,8 +3,8 @@ import { DecoratedH3, DefaultH3 } from "./typefaces";
 import Image from "next/image";
 import { PrimaryButton } from "./buttons";
 import A_sectionSupport from "@/public/feat-section-support.png";
-import A_signIn from "@/public/feat-sign-in.png"
-import A_signUp from "@/public/feat-sign-up.png"
+import A_signIn from "@/public/feat-sign-in.png";
+import A_signUp from "@/public/feat-sign-up.png";
 
 export default function Showcase() {
   const signInText = "<SignIn/>";
@@ -17,17 +17,15 @@ export default function Showcase() {
     setActiveTab(Number(event.target.value) as Tabs);
   };
   return (
-    <div className="grid grid-cols-2 gap-24">
+    <div className="flex flex-col gap-6 sm:grid sm:grid-cols-2 sm:gap-24">
       <div className="flex flex-col gap-6">
-        <div>
-          <DecoratedH3>Auth & User Management</DecoratedH3>
-          <DefaultH3>with just</DefaultH3>
-          <div className="flex place-items-baseline gap-2">
-            <DecoratedH3>One Line</DecoratedH3>
-            <DefaultH3>of Code</DefaultH3>
-          </div>
+        <div className="whitespace-pre-wrap">
+          <DecoratedH3>Auth & User Management </DecoratedH3>
+          <span className="inline-block"><DefaultH3>with just </DefaultH3></span>
+          <span className="inline-block"><DecoratedH3>one line </DecoratedH3></span>
+          <span className="inline-block"><DefaultH3>of code</DefaultH3></span>
         </div>
-        <div className="flex flex-col gap-2 place-items-start">
+        <div className="flex flex-col gap-2 place-items-center sm:place-items-start">
           <div className="relative group">
             <input
               type="radio"
@@ -44,7 +42,7 @@ export default function Showcase() {
             />
             <label
               htmlFor="featureA"
-              className="block cursor-pointer select-none font-monaspace bg-lezzaccent w-96 py-2 ps-6 text-2xl rounded-md group-hover:bg-lezzborder transition-all ease-out duration-300 delay-150 sepia-[.5] peer-checked:filter-none"
+              className="block cursor-pointer select-none font-monaspace bg-lezzaccent w-fit sm:w-96 py-2 ps-6 pe-4 sm:pe-0 text-2xl rounded-md group-hover:bg-lezzborder transition-all ease-out duration-300 delay-150 sepia-[.5] peer-checked:filter-none"
             >
               {signInText}
             </label>
@@ -65,7 +63,7 @@ export default function Showcase() {
             />
             <label
               htmlFor="featureB"
-              className="block cursor-pointer select-none font-monaspace bg-lezzaccent w-96 py-2 ps-6 text-2xl rounded-md group-hover:bg-lezzborder transition-all ease-out duration-300 delay-150 sepia-[.5] peer-checked:filter-none"
+              className="block cursor-pointer select-none font-monaspace bg-lezzaccent w-fit sm:w-96 py-2 ps-6 pe-4 sm:pe-0 text-2xl rounded-md group-hover:bg-lezzborder transition-all ease-out duration-300 delay-150 sepia-[.5] peer-checked:filter-none"
             >
               {signUpText}
             </label>
@@ -86,7 +84,7 @@ export default function Showcase() {
             />
             <label
               htmlFor="featureC"
-              className="block cursor-pointer select-none font-monaspace bg-lezzaccent w-96 py-2 ps-6 text-2xl rounded-md group-hover:bg-lezzborder transition-all ease-out duration-300 delay-150 sepia-[.5] peer-checked:filter-none"
+              className="block cursor-pointer select-none font-monaspace bg-lezzaccent w-fit sm:w-96 py-2 ps-6 pe-4 sm:pe-0 text-2xl rounded-md group-hover:bg-lezzborder transition-all ease-out duration-300 delay-150 sepia-[.5] peer-checked:filter-none"
             >
               {userButtonText}
             </label>
@@ -107,20 +105,20 @@ export default function Showcase() {
             />
             <label
               htmlFor="featureD"
-              className="block cursor-pointer select-none font-monaspace bg-lezzaccent w-96 py-2 ps-6 text-2xl rounded-md group-hover:bg-lezzborder transition-all ease-out duration-300 delay-150 sepia-[.5] peer-checked:filter-none"
+              className="block cursor-pointer select-none font-monaspace bg-lezzaccent w-fit sm:w-96 py-2 ps-6 pe-4 sm:pe-0 text-2xl rounded-md group-hover:bg-lezzborder transition-all ease-out duration-300 delay-150 sepia-[.5] peer-checked:filter-none"
             >
               {userProfileText}
             </label>
           </div>
         </div>
       </div>
-      <div className="flex place-items-center place-content-center relative">
+      <div className="flex flex-col-reverse sm:flex-row sm:place-items-center sm:place-content-center static sm:relative">
         <Image
           src={A_sectionSupport}
           alt="Common Graphics"
-          className="absolute object-cover object-left-top"
+          className="hidden sm:block absolute object-cover object-left-top"
         />
-        <PrimaryButton className="absolute left-0 bottom-0">
+        <PrimaryButton className="sm:absolute place-self-center sm:left-0 sm:bottom-0">
           View Code
         </PrimaryButton>
         {activeTab === 1 && (
@@ -129,7 +127,7 @@ export default function Showcase() {
             alt="Feature: Sign In"
             width={320}
             height={320}
-            className="absolute"
+            className="sm:absolute"
           />
         )}
         {activeTab === 2 && (
@@ -138,7 +136,7 @@ export default function Showcase() {
             alt="Feature: Sign Up"
             width={320}
             height={320}
-            className="absolute"
+            className="sm:absolute"
           />
         )}
         {activeTab === 3 && (
@@ -147,7 +145,7 @@ export default function Showcase() {
             alt="Feature: User Button"
             width={320}
             height={320}
-            className="absolute"
+            className="relative sm:absolute"
           />
         )}
         {activeTab === 4 && (
@@ -156,7 +154,7 @@ export default function Showcase() {
             alt="Feature: User Profile"
             width={320}
             height={320}
-            className="absolute"
+            className="relative sm:absolute"
           />
         )}
       </div>
