@@ -8,8 +8,10 @@ import A_placeholder from "@/public/video-placeholder.png";
 import B_react from "@/public/react-logo.svg";
 import B_next from "@/public/next-logo.svg";
 import B_native from "@/public/react-native-logo.png";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+  const router = useRouter();
   const [play, setPlay] = React.useState(false);
   const handlePlay = () => setPlay(true);
   const handleClose = () => setPlay(false);
@@ -41,7 +43,9 @@ export default function Home() {
             user management, that generate natively into React, NextJs, an React
             Native!
           </p>
-          <CtaButton>Book a Demo</CtaButton>
+          <CtaButton onClick={() => router.push("/book_a_demo")}>
+            Book a Demo
+          </CtaButton>
         </div>
         <div className="flex place-items-center place-content-center">
           <Image
@@ -49,9 +53,7 @@ export default function Home() {
             alt="LezzAuth Showcase/Demo"
             className="relative"
           />
-          <div className="absolute" onClick={handlePlay}>
-            <PlayButton />
-          </div>
+          <PlayButton className="absolute" onClick={handlePlay} />
           {play && (
             <div
               className="fixed z-[100] top-0 left-0 w-screen h-screen flex place-items-center place-content-center bg-lezzbg bg-opacity-95"

@@ -9,13 +9,15 @@ import {
 import brand from "@/public/logo.svg";
 import { RiFingerprintFill } from "react-icons/ri";
 import React from "react";
+import { useRouter } from "next/navigation";
 
 export default function Header() {
+  const router = useRouter();
   const [open, setOpen] = React.useState(false);
   const isOpen = () => setOpen(!open);
   React.useEffect(() => {
     const body = document.body;
-    if (open) {
+    if (open === true) {
       body.style.overflow = "hidden";
     } else {
       body.style.overflow = "auto";
@@ -34,11 +36,17 @@ export default function Header() {
             alt="Lezzauth Logo"
             width={100}
             height={100}
-            className="h-auto sm:h-auto size-32 sm:size-48"
+            className="h-auto sm:h-auto size-32 sm:size-48 cursor-pointer"
+            onClick={() => router.push("/")}
           />
         </div>
         <div className="flex sm:gap-2">
-          <PrimaryButton className="hidden sm:block">Book a Demo</PrimaryButton>
+          <PrimaryButton
+            className="hidden sm:block"
+            onClick={() => router.push("/book_a_demo")}
+          >
+            Book a Demo
+          </PrimaryButton>
           <GhostButton className="hidden sm:block">Sign in</GhostButton>
           <div onClick={isOpen}>
             <CustomIconButton className="block sm:hidden">
@@ -48,7 +56,7 @@ export default function Header() {
         </div>
       </div>
       {open && (
-        <div className="py-10 flex flex-col gap-10 place-items-center w-screen h-screen fixed top-0 left-0 z-[100] bg-lezzbg opacity-95 transition-all delay-150 duration-300 ease-out">
+        <div className="py-10 flex flex-col gap-10 place-items-center w-screen h-screen fixed top-0 z-[100] bg-lezzbg opacity-95 animate-in slide-in-from-right-full">
           <div className="flex justify-between place-items-center w-full px-6">
             <Image
               src={brand}
@@ -57,12 +65,12 @@ export default function Header() {
               height={100}
               className="h-auto size-32"
             />
-            <div onClick={isOpen}>
-              <XButton />
-            </div>
+            <XButton onClick={isOpen} />
           </div>
           <div className="flex flex-col gap-3 place-items-center">
-            <PrimaryButton>Book a Demo</PrimaryButton>
+            <PrimaryButton onClick={() => router.push("/book_a_demo")}>
+              Book a Demo
+            </PrimaryButton>
             <GhostButton>Sign in</GhostButton>
           </div>
         </div>
